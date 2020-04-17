@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 
+import DataCard from "./components/dataCard";
+
 class App extends React.Component {
   constructor() {
     super();
@@ -21,7 +23,16 @@ class App extends React.Component {
       });
   }
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <h1>Lambda Player Data</h1>
+        {this.state.initialData.map(item => {
+          return (
+            <DataCard name={item.name} id={item.id} country={item.country} />
+          );
+        })}
+      </div>
+    );
   }
 }
 
