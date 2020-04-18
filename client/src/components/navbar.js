@@ -15,6 +15,7 @@ export default function NavBar() {
       <div
         onClick={toggleMode}
         className={darkMode ? "toggle toggled" : "toggle"}
+        data-testid="dark-mode-switcher"
       />
     </div>
   );

@@ -1,16 +1,19 @@
 import React from "react";
-import { render, getByText } from "@testing-library/react";
+import { render, findAllByText, findByTestId } from "@testing-library/react";
 import App from "./App";
-import DataCard from "./components/dataCard";
 
 test("renders without crashing", () => {
   render(<App />);
 });
-test("navbar with text renders", () => {
+test("DataCardsRender", () => {
   render(<App />);
-  findAllByText(/name/i).toBeInTheDocument();
+  findAllByText(/name/i);
 });
-
+test("toggle switch is visable", () => {
+  render(<App />);
+  findByTestId(/dark-mode-switcher/);
+});
+//ask about how to use Asynch
 // test("data card loads", () => {
 //   render(<App />);
 //   const nameEl = getbyText("Name");
