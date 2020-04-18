@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 import DataCard from "./components/dataCard";
+import NavBar from "./components/navbar";
 
 class App extends React.Component {
   constructor() {
@@ -25,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Lambda Player Data</h1>
+        <NavBar />
         {this.state.initialData.map(item => {
           return (
             <DataCard name={item.name} id={item.id} country={item.country} />
