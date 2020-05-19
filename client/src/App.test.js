@@ -1,9 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import { render, findAllByText, findByTestId } from "@testing-library/react";
+import App from "./App";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test("renders without crashing", () => {
+  render(<App />);
 });
+test("DataCardsRender", () => {
+  render(<App />);
+  findAllByText(/name/i);
+});
+test("toggle switch is visable", () => {
+  render(<App />);
+  findByTestId(/dark-mode-switcher/);
+});
+//ask about how to use Asynch
+// test("data card loads", () => {
+//   render(<App />);
+//   const nameEl = getbyText("Name");
+//   expect(nameEl).toBeVisible;
+// });
